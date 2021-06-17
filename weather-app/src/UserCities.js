@@ -22,26 +22,18 @@ const UserCities = (city) => {
         
         
         if(cityArray === null){
-            cityArray = []
+            cityArray = [];
         }
         
-        if(cityArray.length === 0){
-            cityArray.push(city);
-            
-            localStorage.setObj('city', cityArray);
-            window.location.reload();
-
-            
-        }
-        if (!cityArray.includes(city)) {
-					cityArray.push(city);
+        
+        if (!cityArray.includes(city.toUpperCase())) {
+					cityArray.push(city.toUpperCase());
 					
 					localStorage.setObj('city', cityArray);
-					cityArray = localStorage.getObj('city');
 					window.location.reload();
 				}
         
-    }
+    }//addCity
 
     
     let cityArray = localStorage.getObj("city")
@@ -54,10 +46,12 @@ const UserCities = (city) => {
 				<div className='cardContainer'>
 					{cityArray
 						? cityArray.map((city) => {
-								return <CityCard key = {city} city={city} />;
+								return <CityCard key = {city} city={city} displayDeleteLink={true} />;
 						  })
 						: null}
+                    
 				</div>
+                
 			</div>
 		);
 };

@@ -2,10 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './App.css';
 const API_KEY = process.env.REACT_APP_API_KEY;
-const CityCard = ({  city }) => {
+Storage.prototype.setObj = function(key, obj) {
+    return this.setItem(key, JSON.stringify(obj))
+}
+Storage.prototype.getObj = function(key) {
+    return JSON.parse(this.getItem(key))
+}
+
+const CityCard = ({  city, displayDeleteLink }) => {
 	const [weatherData, setWeatherData] = useState([]);
+    console.log("city passed here=" + city)
 	useEffect(() => {
-        console.log(API_KEY)
+      
 		const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${API_KEY}`;
 		fetch(url)
 			.then((res) => res.json())
@@ -19,11 +27,22 @@ const CityCard = ({  city }) => {
 		
 	}, [city]);
 
+
+
+    
+function deleteCity (cityName){
+    console.log("Deleted " + city.toUpperCase());
+    let cityArray = localStorage.getObj('city');
+    cityArray.splice(cityArray.indexOf(cityName),1)
+    console.log(cityArray);
+    localStorage.setObj('city', cityArray);
+    window.location.reload();
+}
 	return (
 		<>
 			{weatherData.weather ? (
 				<div className='card' key={city}>
-					<Link className='link' to={`/details/${city}`}>
+					<Link className='link' to={`/forecast/${city}`}>
 						
 						<h3>
 							{weatherData.name}, {weatherData.sys.country}
@@ -36,6 +55,7 @@ const CityCard = ({  city }) => {
 							src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`} alt = "weather-icon"
 						/>
 					</Link>
+                    {displayDeleteLink ? (<button onClick={() => deleteCity(city)}>Delete city</button>): null }
 				</div>
 			) : null}
 		</>

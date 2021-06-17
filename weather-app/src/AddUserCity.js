@@ -11,6 +11,7 @@ const AddUserCity = ({addCity}) => {
             <label>City Name:</label>
             <input type="text" value={city} required onChange={(e)=> setCity(e.target.value)}/>
             <input className='add-city' type="submit" value="Add City" />
+            
         </form>
     );
 };

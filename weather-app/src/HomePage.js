@@ -18,8 +18,7 @@ let cityNames = [
 	'Tokyo',
 	'Manila',
 	'Istanbul',
-	'Reykjavik',
-	'Oslo',
+	
 
 ]; 
 const HomePage = () => {
