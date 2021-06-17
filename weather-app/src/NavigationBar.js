@@ -18,7 +18,7 @@ const NavigationBar = () => {
 					/>
 				</Link>
 				<div>
-					<h2 className='Nav-title'>Urban Weather At A Glance</h2>
+					<h2 className='Nav-title'>City Weather</h2>
 
 					<Link className='saved-cities' to='/user_cities'>
 						<img className = "star" title = "User Cities" src = {Star} alt="favorite-star-icon"/>
