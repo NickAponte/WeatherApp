@@ -42,6 +42,7 @@ function deleteCity (cityName){
 		<>
 			{weatherData.weather ? (
 				<div className='card' key={city}>
+                    
 					<Link className='link' to={`/forecast/${city}`}>
 						
 						<h3>
@@ -55,7 +56,7 @@ function deleteCity (cityName){
 							src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`} alt = "weather-icon"
 						/>
 					</Link>
-                    {displayDeleteLink ? (<button onClick={() => deleteCity(city)}>Delete city</button>): null }
+                    {displayDeleteLink ? (<button className = "deleteBttn" onClick={() => deleteCity(city)}>Delete city</button>): null }
 				</div>
 			) : null}
 		</>

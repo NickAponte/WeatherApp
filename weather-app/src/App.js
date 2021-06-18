@@ -5,6 +5,7 @@ import './App.css';
 import NavigationBar from './NavigationBar';
 import CityCardForecast from './CityCardForecast';
 import UserCities from './UserCities';
+import MapComponent from "./MapView";
 function App() {
 useEffect(() => {
 	document.title = 'WeatherApp';
@@ -24,13 +25,14 @@ useEffect(() => {
 					render={(routerProps) => <CityCardForecast match={routerProps.match} />}
 				/>
 				<Route path='/user_cities' component={UserCities} />
+        <Route path ="/map" component = {MapComponent}/>
 			</main>
-			<footer>
+			{/* <footer>
 				<div className='footer'>
 					<br></br>
 					<p className='copyright'>Data from OpenWeatherAPI &copy;</p>
 				</div>
-			</footer>
+			</footer> */}
 		</>
 	);
 }

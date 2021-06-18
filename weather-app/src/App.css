@@ -20,6 +20,7 @@
 	grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));
 	background: rgba(233, 240, 240, 0.712);
 	grid-row: 2;
+  max-width: 97vw;
 	
 }
 .boxContainer {
@@ -32,9 +33,9 @@
 	grid-template-columns: repeat(auto-fill, minmax(17vw, 1fr));
 	background: rgba(233, 240, 240, 0.712);
 	grid-row: 2;
-	border-style: solid;
+	/* border-style: solid;
 	border-color: rgb(197, 197, 52, 0.3);
-	border-width: 10px ;
+	border-width: 10px ; */
 	
 	
 }
@@ -50,11 +51,12 @@
 .childBox > ul {
 	list-style-type: none;
 	padding: 0;
+  font-size: medium;
 }
 .card {
 	justify-content: center;
 	/* margin: 10%; */
-	height: 30vh;
+	height: 35vh;
 	
 	align-items: center;
 	background: rgba(151, 206, 228, 0.63);
@@ -86,7 +88,7 @@
 	
 	
 	display: grid;
-	
+	color:red;
 	grid-template-columns: repeat(auto-fill, minmax(1fr, 1fr));
 	background-color: blueviolet;
 	
@@ -94,9 +96,10 @@
 
 .weatherDetails {
 	margin: 25px;
-	
+	font-size: 100px;
+  color: red;
 	grid-row: 1;
-	height: 65vh;
+	height: 10vh;
 	border: 2px solid black;
 	text-align: center;
 	background-color: lightgrey;
@@ -128,11 +131,15 @@
 .mainNavContainer{
 	display: flex;
 	justify-content: center;
+  /* padding-left: 2vw; */
 	
+}
+.body{
+  background-color: lightblue;
 }
 .topNavBar {
 	display: flex;
-	padding-top: 20px;
+	
 	background: rgba(100, 95, 95, 0.233);
 	grid-row: 1;
 	grid-column: 1 / span 5;
@@ -147,12 +154,21 @@
 	border-radius: 10%;
 	margin: 1rem;
 }
-.Nav-title{
-	/* padding: 3rem; */
-	/* font-size: 2rem; */
+.map{
+
+  width: 15vw;
+	border-color: white;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 10%;
+	margin: 1rem;
+  height: 15vh;
+
 }
+
 .city-header {
 	text-align: center;
+  background-color:lightblue;
 }
 .copyright {
 	padding-left: 5px;
@@ -164,12 +180,9 @@
 	color: black;
 }
 .star {
-	width: 30px;
-	height: 30px;
-	border-radius: 50%;
-	border-style: solid;
-	border-width: 2px;
-	border-color: black;
+	width: 10vw;
+	
+
 }
 .saved-form {
 	padding: 15px;
@@ -185,4 +198,9 @@
 	text-align: center;
 	font-size: 16px;
 	border-radius: 10%;
+}
+.deleteBttn{
+  border-radius: 10px;
+  color:red;
+  cursor: pointer;
 }
