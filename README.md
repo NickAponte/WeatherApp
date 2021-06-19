@@ -1,5 +1,9 @@
 # WeatherApp
 
+See it live at https://weatherapp-limosys.herokuapp.com/
+
+It is hosted on a free indtance, which can take a while to spin up, do not worry if it takes a long time to load. 
+
 ## Installation
 
 To install, clone and pull down this repo. create a .env file in the root directory and add a variable with your own api key from https://home.openweathermap.org/users/sign_up --> REACT_APP_API_KEY = Your API key  
