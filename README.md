@@ -2,7 +2,7 @@
 
 See it live at https://weatherapp-limosys.herokuapp.com/
 
-It is hosted on a free indtance, which can take a while to spin up, do not worry if it takes a long time to load. 
+It is hosted on a free instance, which can take a while to spin up, do not worry if it takes a long time to load. 
 
 ## Installation
 
